@@ -1,0 +1,22 @@
+#:kivy 1.9.0
+
+<CustButton@Button>:
+    fint_size: 32
+    color: 0, 0, 0, 1  # RGBA
+    size: 150, 50
+    background_normal: '' #button state when not pressed
+    background_down: 'bkgrnd-down-color.png'
+    background_color: .88, .88, .88, 1
+
+<CustomWidget>:
+    CustButton:
+        text: "Random"
+        pos: root.x, 200 #lower left corner positioning
+
+    CustButton:
+        text: "Buttons"
+        pos: 200, root.y
+    
+    CustButton:
+        text: "Random"
+        pos: 200, 400

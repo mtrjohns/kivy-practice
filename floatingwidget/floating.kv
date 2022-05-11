@@ -1,0 +1,31 @@
+#:kivy 1.9.0
+
+<CustButton@Button>:
+    fint_size: 32
+    color: 0, 0, 0, 1  # RGBA
+    size: 150, 50
+    background_normal: '' #button state when not pressed
+    background_down: 'bkgrnd-down-color.png'
+    background_color: .88, .88, .88, 1
+    size_hint: .4, .3 # 0-1 define widget width in percentage
+
+<FloatLayout>:
+    CustButton:
+        text: "Top Left"
+        pos_hint: {"x": 0, "top": 1} #lower left corner positioning
+
+    CustButton:
+        text: "Bottom Right"
+        pos_hint: {"right": 1, "y": 0}
+    
+    CustButton:
+        text: "Top Right"
+        pos_hint: {"right": 1, "top": 1}
+
+    CustButton:
+        text: "Bottom Left"
+        pos_hint: {"left": 1, "bottom": 0}
+
+    CustButton:
+        text: "Center"
+        pos_hint: {"center_x": .5, "center_y": .5}

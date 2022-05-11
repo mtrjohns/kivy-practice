@@ -9,7 +9,7 @@ class HelloKivyApp(App):
 
     def build(self):
         return Label()
-    
+
 helloKivy = HelloKivyApp()
-    
-helloKivy.run()    
+
+helloKivy.run()
