@@ -1,0 +1,95 @@
+#:kivy 1.9.0
+
+<CustButton@Button>:
+    font_size: 32
+
+<CalcGridLayout>:
+    # id to access the functions
+    id: calculator
+    # text input area
+    display: entry
+    rows: 5
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        TextInput:
+            id: entry
+            font_size: 32
+            multiline: False
+
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "7"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "8"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "9"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "+"
+            # function to change value
+            on_press: entry.text += self.text
+
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "4"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "5"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "6"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "-"
+            # function to change value
+            on_press: entry.text += self.text
+
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "1"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "2"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "3"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "*"
+            # function to change value
+            on_press: entry.text += self.text
+
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "AC"
+            # function to change value
+            on_press: entry.text = ""
+        CustButton:
+            text: "0"
+            # function to change value
+            on_press: entry.text += self.text
+        CustButton:
+            text: "="
+            # function to change value - calls calculate id above and text from the entry above
+            on_press: calculator.calculate(entry.text)
+        CustButton:
+            text: "/"
+            # function to change value
+            on_press: entry.text += self.text
