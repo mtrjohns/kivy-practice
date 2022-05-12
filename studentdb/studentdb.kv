@@ -1,0 +1,27 @@
+#:kivy 1.9.0
+#: import main studentdb
+#: import ListAdaptor kivy.adapters.listadapter.ListAdapter
+#: import ListItemButton kivy.uix.listview.ListItemButton
+
+StudentDB:
+
+<StudentDB>:
+    orientation: "vertical"
+    first_name_text_input: first_name
+    last_name_text_input: last_name
+    student_list: students_list_view
+    padding: 10
+    spacing: 10
+
+    BowLayout:
+        size_hint_y: None
+        height: "40dp"
+
+        Label:
+            test: "First Name"
+        TextInput:
+            id: first_name
+        Label:
+            test: "Last Name"
+        TextInput:
+            id: last_name
