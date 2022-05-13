@@ -51,14 +51,17 @@ class PongGame(Widget):
         self.player2.bounce_ball(self.ball)
         
         # bounce off bottom or top of screen
-        if (self.ball.y < 0) or (self.ball.top > self.height):
+        if (self.ball.y < self.y) or (self.ball.top > self.top):
             # inverse ball y velocity
             self.ball.velocity_y *= -1
             
-        # bounce off left or right
-        if (self.ball.x < 0) or (self.ball.right > self.width):
-            # inverse ball x velocity
-            self.ball.velocity_x *= -1
+        # went off screen left or right
+        if self.ball.x < self.x:
+            self.player2.score += 1
+            self.serve_ball(vel=(4, 0))
+        if self.ball.right > self.width:
+            self.player1.score += 1
+            self.serve_ball(vel=(-4, 0))
 
     # respond to touch input
     def on_touch_move(self, touch):
